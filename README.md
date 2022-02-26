@@ -21,3 +21,39 @@
    1. 继承HttpServlet实现doGet()和doPost()方法
 5. ServletDemo4
    1. Servlet各种路径配置
+
+## day02-request
+
+1. RequestDemo1
+   1. 获取请求行数据
+      1. 获取请求方式：request.getMethod()
+      2. 获取虚拟目录：request.getContextPath()
+      3. 获取Servlet路径：request.getServletPath()
+      4. 获取get方式请求参数：request.getQueryString()
+      5. 获取请求URI：request.getRequestURI()
+      6. 获取请求URL：request.getRequestURL()
+      7. 获取协议及版本：request.getProtocol()
+      8. 获取客户机IP地址：request.getRemoteAddr()
+2. RequestDemo2
+   1. Request对象获取请求头
+      1. 获取所有请求头名称：request.getHeaderName()
+3. RequestDemo3
+   1. Request对象获取请求头数据
+      1. 获取请求头数据：request.getHeader("user-agent")
+4. RequestDemo4
+   1. Request对象获取请求头数据
+5. RequestDemo5
+   1. 获取请求消息体——请求参数
+6. RequestDemo6
+   1. 根据参数名称获取参数值：request.getParameter()
+   2. 根据参数名称获取参数值的数组：request.getParamterValues()
+   3. 获取所有请求的参数名称：request.getParamterNames()
+   4. 获取所有参数的map集合：request.getParameterMap()
+7. RequestDemo7
+   1. 设置请求参数字符集：request.setCharsetEncoding()
+8. RequestDemo8
+   1. 跳转转发：request.getRequestDispatcher("/").forward(request,response)
+9. RequestDemo9
+   1. forward转发
+10. RequestDemo10
+    1. 获得全局ServletContext：request.getServletContext()
