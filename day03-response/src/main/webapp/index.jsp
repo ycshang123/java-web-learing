@@ -2,12 +2,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Servlet初体验</title>
+    <style>
+        ul li {
+            list-style: none;
+            float: left;
+            margin-top: 40px;
+        }
+
+        ul li a {
+
+            padding: 20px 50px;
+            height: 40px;
+            background-color: #00897b;
+            color: #fff;
+            box-sizing: border-box;
+            margin-right: 10px;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        ul li a:hover {
+            background-color: #ea8363;
+        }
+    </style>
 </head>
 <body>
-<h1><%= "Hello World!" %>
+<h1><%= "Servlet初体验" %>
 </h1>
+<h2><%= "根据不同的参数类型返回不同的资源" %>
+</h2>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<ul>
+     <li>
+        <a href="res?type=html">返回HTML</a>
+    </li>
+    <li>
+        <a href="res?type=json">返回JSON</a>
+    </li>
+    <li>
+        <a href="res?type=img">返回图片</a>
+    </li>
+    <li>
+        <a href="res?type=pdf">返回pdf</a>
+    </li>
+</ul>
 </body>
 </html>

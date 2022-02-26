@@ -57,3 +57,47 @@
    1. forward转发
 10. RequestDemo10
     1. 获得全局ServletContext：request.getServletContext()
+
+## day03-response
+
+1. DownloadServlet：文件下载
+
+2. VerifyCodeServlet：实现验证码
+
+3. ResponseDemo1：重定向
+
+4. ResponseDemo2：设置响应头并设置重定向
+
+   1. 设置响应头：response.setHeader()
+
+5. ResponseDemo3：
+
+   1. 返回字符数据：response.getWriter()
+
+6. ResponseDemo4：
+
+   1. 返回字节数据：response.getOutputStream()
+
+7. ServletContextDemo
+
+   1. 获取文件真实路径：context.getRealPath()
+
+8. ServletContextDemo1
+
+   1. 两种方法获得ServletContext
+      1. response.getServletContext()
+      2. this.getServletContext()
+
+9. ServletContextDemo2
+
+   1. 获取ServletContext 获得MIME类型
+      1. context.getMimeType()
+
+10. ServletContextDemo3
+
+    1. 通过Servlet共享数据：context.setAttribute()
+
+    
+
+
+
