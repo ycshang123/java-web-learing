@@ -9,7 +9,7 @@
         <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
-    <root id="archive" name="java-web-learning-1.0-SNAPSHOT.war">
+    <root id="archive" name="Unknown-Unknown.war">
       <element id="artifact" artifact-name="java-web-learning:war exploded" />
     </root>
   </artifact>
