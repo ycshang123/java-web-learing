@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用ajax向后端请求品牌列表数据</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<div class="container">
+    <a href="addBrandAjax.html">新增品牌</a>
+    <hr>
+    <table id="brandTable" class="responstable"></table>
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    window.onload = function () {
+
+        let xHttp;
+        if (window.XMLHttpRequest) {
+            xHttp = new XMLHttpRequest()
+        } else {
+            xHttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        //发送请求
+        xHttp.open("get", "http://localhost:8888/selectAllServlet")
+        xHttp.send();
+        xHttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText)
+                //获取响应数据
+                let brands = JSON.parse(this.responseText);
+                //拼接表头行，推荐使用反引号
+                let tableData = `<tr>
+<th>序号</th>
+<th>品牌名称</th>
+<th>企业名称</th>
+<th>排序</th>
+<th>品牌介绍</th>
+<th>状态</th>
+<th>操作</th>
+</tr>`;
+                //遍历响应回来的数据 brands ，拿到每一条品牌数据
+                for (let i = 0; i < brands.length; i++) {
+                    let brand = brands[i];
+                    console.log(brand)
+                    tableData +=
+                        `<tr>
+<td>${brand.id}</td>
+<td>${brand.brandName}</td>
+<td>${brand.companyName}</td>
+<td>${brand.ordered}</td>
+<td>${brand.description}</td>
+<td>${brand.status}</td>
+<td>
+<a href="#">修改</a>
+<a href="#">删除</a>
+</td>
+</tr>`;
+                }
+                //最后将拼接好的字符串写到表格中
+                document.getElementById("brandTable").innerHTML = tableData;
+            }
+        }
+    }
+
+
+</script>
+</body>
+
+<style>
+    .responstable {
+        width: 95%;
+        overflow: hidden;
+        background: #FFF;
+        color: #024457;
+        border-radius: 10px;
+        border: 1px solid #167F92;
+    }
+
+    .responstable tr {
+        border: 1px solid #D9E4E6;
+    }
+
+    .responstable tr:nth-child(odd) {
+        background-color: #EAF3F3;
+    }
+
+    .responstable th {
+        display: none;
+        border: 1px solid #FFF;
+        background-color: #167F92;
+        color: #FFF;
+        padding: 1em;
+    }
+
+    .responstable th:first-child {
+        display: table-cell;
+        text-align: center;
+    }
+
+    .responstable th:nth-child(2) {
+        display: table-cell;
+    }
+
+    .responstable th:nth-child(2) span {
+        display: none;
+    }
+
+    .responstable th:nth-child(2):after {
+        content: attr(data-th);
+    }
+
+    @media (min-width: 480px) {
+        .responstable th:nth-child(2) span {
+            display: block;
+        }
+
+        .responstable th:nth-child(2):after {
+            display: none;
+        }
+    }
+
+    .responstable td {
+        display: block;
+        word-wrap: break-word;
+        max-width: 7em;
+    }
+
+    .responstable td:first-child {
+        display: table-cell;
+        text-align: center;
+        border-right: 1px solid #D9E4E6;
+    }
+
+    @media (min-width: 480px) {
+        .responstable td {
+            border: 1px solid #D9E4E6;
+        }
+    }
+
+    .responstable th, .responstable td {
+        text-align: left;
+        margin: .5em 1em;
+    }
+
+    @media (min-width: 480px) {
+        .responstable th, .responstable td {
+            display: table-cell;
+            padding: 1em;
+        }
+    }
+
+    /*body {*/
+    /*        padding: 0 2em;*/
+    /*        font-family: Arial, sans-serif;*/
+    /*        color: #024457;*/
+    /*        background: #f2f2f2;*/
+    /*    }*/
+
+    h1 {
+        font-family: Verdana;
+        font-weight: normal;
+        color: #024457;
+    }
+
+    h1 span {
+        color: #167F92;
+    }
+
+</style>
+
+</html>

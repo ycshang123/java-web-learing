@@ -8,7 +8,10 @@
       <module fileurl="file://$PROJECT_DIR$/day02-request/day02-request.iml" filepath="$PROJECT_DIR$/day02-request/day02-request.iml" />
       <module fileurl="file://$PROJECT_DIR$/day03-response/day03-response.iml" filepath="$PROJECT_DIR$/day03-response/day03-response.iml" />
       <module fileurl="file://$PROJECT_DIR$/day04-cookie-session/day04-cookie-session.iml" filepath="$PROJECT_DIR$/day04-cookie-session/day04-cookie-session.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day05-ajax/day05-ajax.iml" filepath="$PROJECT_DIR$/day05-ajax/day05-ajax.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-web-learning.iml" filepath="$PROJECT_DIR$/java-web-learning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quickstart/quickstart.iml" filepath="$PROJECT_DIR$/quickstart/quickstart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/servlet-response-exercise/servlet-response-exercise.iml" filepath="$PROJECT_DIR$/servlet-response-exercise/servlet-response-exercise.iml" />
     </modules>
   </component>
 </project>

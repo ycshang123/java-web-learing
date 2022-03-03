@@ -17,7 +17,7 @@ public class SqlSessionFactoryUtil {
     private static SqlSessionFactory sqlSessionFactory;
 
     static {
-        //    静态代码块会随着类的加载自动执行，并且只执行一次，在构造方法前
+        // 静态代码块会随着类的加载自动执行，并且只执行一次，在构造方法前
         String resource = "mybatis-config.xml";
         try {
             InputStream is = Resources.getResourceAsStream(resource);

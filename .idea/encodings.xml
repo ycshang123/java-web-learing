@@ -13,5 +13,11 @@
     <file url="file://$PROJECT_DIR$/day03-response/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/day04-cookie-session/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/day04-cookie-session/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/day05-ajax/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/day05-ajax/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/quickstart/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/quickstart/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/servlet-response-exercise/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/servlet-response-exercise/src/main/resources" charset="UTF-8" />
   </component>
 </project>

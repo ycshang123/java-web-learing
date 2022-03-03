@@ -47,6 +47,7 @@
                 <label>
                     <span>USERNAME</span>
                     <input type="text" id="registerName" name="registerName"/>
+                    <span id="username_err" style="display: none;color: coral">用户名已被使用</span>
                 </label>
                 <label>
                     <span>PASSWORD</span>
@@ -57,8 +58,7 @@
                     <input type="text" id="verifyCode" name="inputCode" STYLE="width: 100px">
                     <div style="display: flex;flex-direction: column;align-items: center">
                         <img src="/verifyCode" alt="验证码" id="verifyCodeImg">
-                        <a  style="color: #cfcfcf;" href="#" id="changeImg">看不清换一张?</a>
-
+                        <a style="color: #cfcfcf;" href="#" id="changeImg">看不清换一张?</a>
                     </div>
 
                 </div>
@@ -106,6 +106,35 @@
         document.getElementById("verifyCodeImg").src = "/verifyCode?" + new Date().getMilliseconds();
         return false;
     }
+
+    document.getElementById("registerName").onblur = function () {
+        const registerName = this.value;
+        let xHttp;
+        if (window.XMLHttpRequest) {
+            xHttp = new XMLHttpRequest();
+        } else {
+            xHttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xHttp.open("GET", "http://localhost:8888/check?registerName=" + registerName);
+        xHttp.send();
+
+        xHttp.onreadystatechange = function () {
+            console.log(this.readyState)
+            if (this.readyState === 4 && this.status === 200) {
+                //    返回判断结果
+                if (this.responseText === true) {
+                    document.getElementById("username_err").innerHTML="用户名正确";
+                    document.getElementById("username_err").style.color="#95c11f";
+                    document.getElementById("username_err").style.display = "block";
+
+
+                } else {
+                    //    用户名不存在，清楚提示信息
+                    document.getElementById("username_err").style.display = "block";
+                }
+            }
+        }
+    }
 </script>
 <style>
     *, *:before, *:after {
@@ -118,7 +147,10 @@
         font-family: 'Open Sans', Helvetica, Arial, sans-serif;
         background: #e0e0e0;
     }
-    a,a:visited{font-size:10px}
+
+    a, a:visited {
+        font-size: 10px
+    }
 
     input, button {
         border: none;
