@@ -9,9 +9,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="quickstart" />
         <module name="java-web-learning" />
+        <module name="brand-case" />
         <module name="book-online" />
         <module name="day04-cookie-session" />
         <module name="day01-servlet" />
+        <module name="day06-filter-listenner" />
         <module name="day05-ajax" />
         <module name="day02-request" />
         <module name="comprehensive-exercise" />
@@ -21,12 +23,14 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="book-online" target="17" />
+      <module name="brand-case" target="17" />
       <module name="comprehensive-exercise" target="17" />
       <module name="day01-servlet" target="17" />
       <module name="day02-request" target="17" />
       <module name="day03-response" target="17" />
-      <module name="day04-cookie-session" target="17" />
+      <module name="day04-cookie-session" target="10" />
       <module name="day05-ajax" target="17" />
+      <module name="day06-filter-listenner" target="17" />
       <module name="java-web-learning" target="17" />
       <module name="quickstart" target="17" />
       <module name="servlet-response-exercise" target="17" />
